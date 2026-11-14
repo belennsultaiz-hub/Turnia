@@ -1,5 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Centro, Servicio } from "./tipos";
+import type { Centro, Resena, Servicio } from "./tipos";
 import { aFecha, diaSemana, horaAR, sumarDias } from "./tiempo";
 
 type Ocupado = { professional_id: string | null; starts_at: string; ends_at: string };
@@ -40,9 +40,10 @@ export async function horariosLibres(sb: SupabaseClient, centro: Centro, servici
 export async function datosCentro(sb: SupabaseClient, slug: string) {
   const { data: centro } = await sb.from("centers").select("*").eq("slug", slug).eq("active", true).maybeSingle();
   if (!centro) return null;
-  const [s, p] = await Promise.all([
+  const [s, p, r] = await Promise.all([
     sb.from("services").select("*").eq("center_id", centro.id).eq("active", true).order("sort").order("name"),
     sb.from("professionals").select("*").eq("center_id", centro.id).eq("active", true).order("sort").order("name"),
+    sb.from("reviews").select("*").eq("center_id", centro.id).eq("approved", true).order("created_at", { ascending: false }).limit(30),
   ]);
-  return { centro: centro as Centro, servicios: (s.data ?? []) as Servicio[], profesionales: p.data ?? [] };
+  return { centro: centro as Centro, servicios: (s.data ?? []) as Servicio[], profesionales: p.data ?? [], resenas: (r.data ?? []) as Resena[] };
 }

@@ -8,8 +8,9 @@ import Servicios from "./Servicios";
 import Equipo from "./Equipo";
 import Bloqueos from "./Bloqueos";
 import MiCentro from "./MiCentro";
+import Resenas from "./Resenas";
 
-const PESTANAS = ["Agenda", "Clientas", "Servicios", "Equipo", "Bloqueos", "Mi centro"] as const;
+const PESTANAS = ["Agenda", "Clientas", "Servicios", "Equipo", "Bloqueos", "Reseñas", "Mi centro"] as const;
 type Pestana = (typeof PESTANAS)[number];
 export type Ctx = { centro: Centro; servicios: Servicio[]; profesionales: Profesional[]; recargar: () => Promise<void> };
 
@@ -58,6 +59,7 @@ export default function Panel() {
         {pestana === "Servicios" && <Servicios {...ctx} />}
         {pestana === "Equipo" && <Equipo {...ctx} />}
         {pestana === "Bloqueos" && <Bloqueos {...ctx} />}
+        {pestana === "Reseñas" && <Resenas {...ctx} />}
         {pestana === "Mi centro" && <MiCentro {...ctx} />}
       </main>
     </div>

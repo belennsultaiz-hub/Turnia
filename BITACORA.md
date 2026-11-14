@@ -15,6 +15,15 @@
 - Publicado en https://turnia.decobazar.workers.dev (probado de punta a punta: reserva, página del turno y panel).
 - Turnos y clientas ficticios en el centro de ejemplo para que el panel tenga movimiento (`seed_demo_turnos.sql`; fechas relativas a hoy, volver a correrlo para "refrescarlos").
 
+
+## 14/11/2026 – Página del centro más linda
+- Diseño en tonos pastel (Playfair Display + DM Sans): portada con foto, logo redondo, estrellas, botones a Instagram y WhatsApp, "Sobre nosotras".
+- Servicios en tarjetas con foto grande (o emoji con color pastel si no hay foto), filtro por categoría y textos con más onda.
+- Reseñas: carrusel en la página + formulario "Dejá tu reseña". Quedan pendientes hasta que el centro las publica (pestaña Reseñas del panel). Tabla `reviews`.
+- Panel: subir foto de cada servicio, portada y logo desde el celu (bucket `fotos` de Supabase, cada centro en su carpeta).
+- Centro de ejemplo con 18 fotos gratis de Pexels (licencia libre) guardadas en `public/demo/`, 5 reseñas de ejemplo.
+  Unsplash no sirve desde acá (bloquea descargas automáticas); Pexels sí (`images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg`).
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).

@@ -19,5 +19,5 @@ export default async function Page({ params }: P) {
   const { data: h } = await sb.from("hours").select("professional_id,weekday").eq("center_id", d.centro.id);
   const dias: Record<string, number[]> = {};
   for (const r of h ?? []) (dias[r.professional_id] ??= []).push(r.weekday);
-  return <Reserva centro={d.centro} servicios={d.servicios} profesionales={d.profesionales} dias={dias} />;
+  return <Reserva centro={d.centro} servicios={d.servicios} profesionales={d.profesionales} dias={dias} resenas={d.resenas} />;
 }
