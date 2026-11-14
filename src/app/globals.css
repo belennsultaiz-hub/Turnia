@@ -192,3 +192,8 @@ label.check input { width: auto; }
 .foto-acc { display: flex; flex-direction: column; gap: 6px; }
 .fotos-centro > div { display: flex; flex-direction: column; gap: 6px; flex: 1 1 220px; }
 .tarjeta.pendiente { border-color: #f0c987; background: #fffaf0; }
+/* Ajustes celular */
+.reserva { overflow-x: clip; }
+.serv-txt b { overflow-wrap: anywhere; hyphens: auto; }
+.serv-pie { flex-wrap: wrap; gap: 2px 8px; }
+.portada { background-position: center 35%; }
