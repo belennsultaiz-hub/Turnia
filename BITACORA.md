@@ -54,7 +54,7 @@
 - La lista y el mensaje se editan en `marketing/contactos.py` (correr `python3 contactos.py` para regenerar el HTML).
 - No pude confirmar puntajes ni seguidores de la mayoría: "fuertes" = cadenas con varias sedes o con notas/reseñas publicadas.
 
-- Tanda 3: +12 contactos (Villa Devoto, Recoleta, Banfield, Wilde, Quilmes, Monte Grande). Total 42. Los de la última tanda llevan etiqueta "nuevo".
+- Tanda 3: +12 contactos (Villa Devoto, Recoleta, Banfield, Wilde, Quilmes, Monte Grande). Total 42. Los de la última tanda llevan etiqueta "nuevo" y además salen solos en `marketing/contactos_nuevos.html` (Belén pidió recibir solo los nuevos, sin repetir).
 
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
