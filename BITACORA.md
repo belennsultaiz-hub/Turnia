@@ -8,6 +8,8 @@
 - App: landing, página pública de reservas, página del turno (confirmar/cancelar) y panel completo.
 - La seña es editable por servicio desde el panel; por ahora se marca a mano como pagada.
 
+- Centro de ejemplo más completo: 18 servicios ficticios en Uñas, Depilación definitiva, Faciales, Cejas y pestañas y Corporales (`seed_demo_v2.sql`). Portada de color y filtro por categoría en la página del centro.
+
 ## Pendiente
 - Crear el repo en GitHub y conectarlo a Cloudflare para publicarlo.
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
