@@ -10,8 +10,12 @@
 
 - Centro de ejemplo más completo: 18 servicios ficticios en Uñas, Depilación definitiva, Faciales, Cejas y pestañas y Corporales (`seed_demo_v2.sql`). Portada de color y filtro por categoría en la página del centro.
 
+- Belén creó el repo `Turnia` en GitHub; subimos el código y lo conectamos a Cloudflare (worker `turnia`, se publica solo con cada push a `main`).
+
+- Publicado en https://turnia.decobazar.workers.dev (probado de punta a punta: reserva, página del turno y panel).
+- Turnos y clientas ficticios en el centro de ejemplo para que el panel tenga movimiento (`seed_demo_turnos.sql`; fechas relativas a hoy, volver a correrlo para "refrescarlos").
+
 ## Pendiente
-- Crear el repo en GitHub y conectarlo a Cloudflare para publicarlo.
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
 - Lista de centros de estética para contactar + mensaje de venta.

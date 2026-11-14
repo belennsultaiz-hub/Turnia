@@ -12,7 +12,11 @@ Hablar en español rioplatense y paso a paso (Belén no programa; su pareja sí)
 - Supabase: proyecto `fduhzxhfiprpplkfjvqw` ("turnia", São Paulo), org de Belén. La URL y la clave anon (pública) están en `.env.production`.
   Desde el sandbox el host `*.supabase.co` está bloqueado: correr SQL con la Management API
   (`POST https://api.supabase.com/v1/projects/fduhzxhfiprpplkfjvqw/database/query`, `Authorization: Bearer proxy-injected`).
-- Cloudflare: worker `turnia` (cuenta `8da1d04cd6946e24ec10eab2689e48f5`). Secretos: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
+- Código: repo `belennsultaiz-hub/Turnia` (privado). Cada push a `main` lo publica Cloudflare Workers Builds solo (3-5 min).
+- Web: https://turnia.decobazar.workers.dev · centro de ejemplo `/c/demo` · panel `/panel`.
+- Cloudflare: worker `turnia` (cuenta `8da1d04cd6946e24ec10eab2689e48f5`), trigger de builds `429d373d-fa28-40db-bda7-07bf14483afb`
+  (para publicar a mano: `POST /accounts/<cuenta>/builds/triggers/<trigger>/builds` con `{"branch":"main"}`). Secretos: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
+  Wrangler no puede subir assets desde el sandbox: publicar siempre con push.
 - Contacto que aparece en la landing: WhatsApp 11 5422-9687 y el mail de Belén (`src/lib/config.ts`).
 
 ## Cómo está armado
@@ -25,6 +29,6 @@ Hablar en español rioplatense y paso a paso (Belén no programa; su pareja sí)
 - La base no deja turnos superpuestos por profesional (constraint `sin_superponer`).
 
 ## Base de datos (supabase/)
-`schema.sql` → `seed_demo.sql` (centro de ejemplo slug `demo`) → `02_no_superponer.sql`.
+`schema.sql` → `seed_demo.sql` (centro de ejemplo slug `demo`) → `02_no_superponer.sql` → `seed_demo_v2.sql` (18 servicios) → `seed_demo_turnos.sql` (turnos ficticios, fechas relativas a hoy).
 Usuario demo del panel: `demo@turnia.app` (centro demo).
 Alta de un centro nuevo: insert en `centers` + usuaria en auth + fila en `center_users` (por ahora lo hacemos nosotros).
