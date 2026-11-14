@@ -24,8 +24,16 @@
 - Centro de ejemplo con 18 fotos gratis de Pexels (licencia libre) guardadas en `public/demo/`, 5 reseñas de ejemplo.
   Unsplash no sirve desde acá (bloquea descargas automáticas); Pexels sí (`images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg`).
 
+
+## 14/11/2026 – Chat estilo WhatsApp y dirección sin DecoBazar
+- Botón verde de WhatsApp abajo a la derecha en la página del centro. Abre un chat (con la estética de WhatsApp) donde una asistente
+  ayuda a reservar: servicio → profesional → día → horario → nombre y WhatsApp → confirma y reserva. También muestra precios,
+  dirección y pasa con una persona por WhatsApp real. La seña todavía no se cobra (falta Mercado Pago).
+- Nueva dirección: https://turnia-turnos.pages.dev (la vieja con "decobazar" quedó apagada). `turnia.pages.dev` ya estaba tomado.
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
 - Lista de centros de estética para contactar + mensaje de venta.
-- Definir nombre y precios finales.
+- Definir nombre y precios finales. Con el nombre final, comprar dominio propio (ej. .com.ar) y conectarlo.
+- WhatsApp real automático (API oficial de Meta) para el bot y los recordatorios.

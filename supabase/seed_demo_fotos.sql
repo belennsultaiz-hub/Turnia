@@ -1,7 +1,7 @@
 -- Fotos del centro de ejemplo (Pexels, licencia libre; guardadas en public/demo/)
-update centers set cover = 'https://turnia.decobazar.workers.dev/demo/portada.jpg'
+update centers set cover = '/demo/portada.jpg'
  where id = '00000000-0000-0000-0000-000000000001';
-update services s set image = 'https://turnia.decobazar.workers.dev/demo/' || v.f || '.jpg' from (values
+update services s set image = '/demo/' || v.f || '.jpg' from (values
  ('Esmaltado semipermanente manos','semi-manos'),('Kapping gel','kapping'),('Uñas esculpidas','esculpidas'),
  ('Belleza de pies con semipermanente','pies'),('Retiro de semipermanente o esculpidas','retiro'),
  ('Láser · axilas','laser-axilas'),('Láser · bozo y mentón','laser-bozo'),('Láser · cavado completo','laser-cavado'),

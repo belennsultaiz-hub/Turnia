@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Centro, Profesional, Resena, Servicio } from "@/lib/tipos";
 import { estiloCategoria, haceServicio } from "@/lib/tipos";
+import Chat from "./Chat";
 import { diaSemana, duracion, hoyAR, lindaFecha, pesos, sumarDias } from "@/lib/tiempo";
 
 type Props = { centro: Centro; servicios: Servicio[]; profesionales: Profesional[]; dias: Record<string, number[]>; resenas: Resena[] };
@@ -184,6 +185,7 @@ export default function Reserva({ centro, servicios, profesionales, dias, resena
       <Resenas centro={centro} resenas={resenas} promedio={promedio} servicios={servicios} />
 
       <footer className="pie">Reservas con <a href="/">Turnia</a></footer>
+      <Chat centro={centro} servicios={servicios} profesionales={profesionales} dias={dias} />
     </main>
   );
 }

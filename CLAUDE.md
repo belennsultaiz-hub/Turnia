@@ -13,8 +13,12 @@ Hablar en español rioplatense y paso a paso (Belén no programa; su pareja sí)
   Desde el sandbox el host `*.supabase.co` está bloqueado: correr SQL con la Management API
   (`POST https://api.supabase.com/v1/projects/fduhzxhfiprpplkfjvqw/database/query`, `Authorization: Bearer proxy-injected`).
 - Código: repo `belennsultaiz-hub/Turnia` (privado). Cada push a `main` lo publica Cloudflare Workers Builds solo (3-5 min).
-- Web: https://turnia.decobazar.workers.dev · centro de ejemplo `/c/demo` · panel `/panel`.
-- Cloudflare: worker `turnia` (cuenta `8da1d04cd6946e24ec10eab2689e48f5`), trigger de builds `429d373d-fa28-40db-bda7-07bf14483afb`
+- Web: **https://turnia-turnos.pages.dev** · centro de ejemplo `/c/demo` · panel `/panel`.
+  Belén no quiere que aparezca "DecoBazar": la cuenta de Cloudflare tiene el subdominio `decobazar.workers.dev`, así que el worker
+  tiene `workers_dev: false` y se publica a través del proyecto Pages `turnia-turnos` (carpeta `pages-proxy/`, `_worker.js` que pasa todo
+  al worker `turnia` por service binding `TURNIA`). Las fotos del ejemplo usan direcciones relativas (`/demo/...`).
+  Más adelante: dominio propio.
+- Cloudflare: worker `turnia` (cuenta `8da1d04cd6946e24ec10eab2689e48f5`), trigger de builds (worker) `429d373d-fa28-40db-bda7-07bf14483afb`
   (para publicar a mano: `POST /accounts/<cuenta>/builds/triggers/<trigger>/builds` con `{"branch":"main"}`). Secretos: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
   Wrangler no puede subir assets desde el sandbox: publicar siempre con push.
 - Contacto que aparece en la landing: WhatsApp 11 5422-9687 y el mail de Belén (`src/lib/config.ts`).
