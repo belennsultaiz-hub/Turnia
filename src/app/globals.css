@@ -125,3 +125,8 @@ label.check input { width: auto; }
 .faq summary { font-weight: 600; cursor: pointer; }
 .contacto { text-align: center; }
 @media (max-width: 600px) { .semana { grid-template-columns: repeat(7, 160px); } .nav a { margin-left: 10px; } }
+.portada { height: 120px; margin: -16px -16px 0; background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 40%, #f6d8c8)); }
+.reserva .centro-cab { margin-top: -40px; }
+.reserva .centro-cab .logo { border: 4px solid var(--fondo); width: 84px; height: 84px; }
+.reserva .centro-cab > div:last-child { padding-top: 36px; }
+@media (min-width: 700px) { .portada { border-radius: 0 0 18px 18px; } }

@@ -15,6 +15,7 @@ export default function Reserva({ centro, servicios, profesionales, dias }: Prop
   const [datos, setDatos] = useState({ nombre: "", telefono: "", email: "" });
   const [enviando, setEnviando] = useState(false);
   const [error, setError] = useState("");
+  const [cat, setCat] = useState("");
 
   const aptas = useMemo(() => (servicio ? profesionales.filter((p) => haceServicio(p, servicio.id)) : []), [servicio, profesionales]);
   const elegidas = prof ? aptas.filter((p) => p.id === prof) : aptas;
@@ -51,6 +52,7 @@ export default function Reserva({ centro, servicios, profesionales, dias }: Prop
 
   return (
     <main className="reserva" style={{ ["--c" as string]: centro.color || "#b5838d" }}>
+      <div className="portada" />
       <header className="centro-cab">
         {centro.logo ? <img src={centro.logo} alt="" className="logo" /> : <div className="logo inicial">{centro.name[0]}</div>}
         <div>
@@ -62,7 +64,13 @@ export default function Reserva({ centro, servicios, profesionales, dias }: Prop
 
       <section className="paso">
         <h2><span>1</span> Elegí el servicio</h2>
-        {categorias.map((c) => (
+        {categorias.length > 1 && (
+          <div className="chips">
+            <button className={cat === "" ? "chip sel" : "chip"} onClick={() => setCat("")}>Todos</button>
+            {categorias.map((c) => <button key={c} className={cat === c ? "chip sel" : "chip"} onClick={() => setCat(c)}>{c}</button>)}
+          </div>
+        )}
+        {categorias.filter((c) => !cat || c === cat).map((c) => (
           <div key={c}>
             <h3 className="cat">{c}</h3>
             {servicios.filter((s) => (s.category || "Servicios") === c).map((s) => (
