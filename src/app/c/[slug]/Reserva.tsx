@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Centro, Profesional, Resena, Servicio } from "@/lib/tipos";
-import { estiloCategoria, haceServicio } from "@/lib/tipos";
+import { estiloCategoria, haceServicio, waUrl } from "@/lib/tipos";
 import Chat from "./Chat";
 import { diaSemana, duracion, hoyAR, lindaFecha, pesos, sumarDias } from "@/lib/tiempo";
 
@@ -64,10 +64,11 @@ export default function Reserva({ centro, servicios, profesionales, dias, resena
     setEnviando(false);
   }
 
-  const wa = centro.whatsapp ? `https://wa.me/${centro.whatsapp}?text=${encodeURIComponent("Hola! Quería hacer una consulta.")}` : null;
+  const wa = waUrl(centro.whatsapp, "Hola! Quería hacer una consulta.");
 
   return (
     <main className="reserva" style={{ ["--c" as string]: centro.color || "#c98ba0" }}>
+      {centro.preview && <div className="vista-previa">Vista previa armada por Turnia para {centro.name} · todavía no es su página oficial</div>}
       <div className="portada" style={centro.cover ? { backgroundImage: `url(${centro.cover})` } : undefined}>
         {!centro.cover && <><i className="burbuja b1" /><i className="burbuja b2" /><i className="burbuja b3" /></>}
       </div>

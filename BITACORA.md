@@ -38,9 +38,18 @@
 - Mensajes: A (centro sin turnos online), B (ya usa turnos online), C (insistir a los 3 días), D (si dicen que sí: qué datos pedirles).
 - Consejos: 10-15 por día, desde WhatsApp Business, 10-12 h o 15-18 h.
 
+
+## 14/11/2026 – Página de prueba para Glow Alisados (Banfield)
+- https://turnia-turnos.pages.dev/c/glow (el ejemplo /c/demo sigue igual). Armada con la info pública de su Instagram (@glowcentrodebelleza.ok):
+  12 servicios con sus precios 2026, seña $10.000, dirección, 7 reseñas de Google (nombre + inicial), logo, portada del local y fotos de sus trabajos (`public/glow/`).
+- Inventado (confirmar con ellas): duración de cada servicio, horario lun-sáb 9 a 19, una sola agenda "Equipo Glow". Kids sin foto (no usamos fotos de nenas).
+- Arriba dice "Vista previa armada por Turnia para Glow · todavía no es su página oficial" (`centers.preview`), para que ninguna clienta real reserve creyendo que es oficial.
+- El WhatsApp del centro puede ser número o link `wa.me/message/...` (`waUrl()` en tipos.ts).
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
+- Glow: si les gusta, crear su usuaria del panel, sacar `preview` y confirmar duraciones/horarios.
 - Ampliar la lista de estéticas a otras zonas (preguntarle a Belén cuáles).
 - Definir nombre y precios finales. Con el nombre final, comprar dominio propio (ej. .com.ar) y conectarlo.
 - WhatsApp real automático (API oficial de Meta) para el bot y los recordatorios.

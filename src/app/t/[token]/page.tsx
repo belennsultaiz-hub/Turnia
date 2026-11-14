@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase";
 import { fechaAR, horaAR, lindaFecha, pesos } from "@/lib/tiempo";
 import Acciones from "./Acciones";
+import { waUrl } from "@/lib/tipos";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Tu turno", robots: { index: false } };
@@ -31,7 +32,7 @@ export default async function Page({ params, searchParams }: { params: Promise<{
         {t.deposit > 0 && !t.deposit_paid && c.deposit_note && <p className="nota">{c.deposit_note}</p>}
         <p className={`estado ${t.status}`}>Estado: {t.status}</p>
         <Acciones token={token} estado={t.status} futuro={new Date(t.starts_at).getTime() > Date.now()} />
-        {c.whatsapp && <a className="boton wa" href={`https://wa.me/${c.whatsapp}?text=${msj}`}>Escribir al centro por WhatsApp</a>}
+        {c.whatsapp && <a className="boton wa" href={waUrl(c.whatsapp, decodeURIComponent(msj))!}>Escribir al centro por WhatsApp</a>}
         <p><a href={`/c/${c.slug}`}>Reservar otro turno</a></p>
       </div>
     </main>

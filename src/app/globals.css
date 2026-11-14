@@ -230,3 +230,5 @@ label.check input { width: auto; }
 .chat-pie { display: flex; gap: 8px; padding: 8px; background: #f0f2f5; }
 .chat-pie input { border-radius: 22px; border: 0; padding: 10px 14px; }
 .chat-pie button { width: 44px; height: 44px; flex: none; border-radius: 50%; border: 0; background: #008069; color: #fff; font-size: 1.1rem; }
+.vista-previa { margin: 0 -16px; background: #2d2424; color: #fff; font-size: .78rem; text-align: center; padding: 6px 12px; }
+@media (min-width: 760px) { .vista-previa { margin: 0; } }

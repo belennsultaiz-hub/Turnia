@@ -2,7 +2,7 @@ export type Centro = {
   id: string; slug: string; name: string; tagline: string | null; address: string | null;
   whatsapp: string | null; instagram: string | null; email: string | null; color: string | null; logo: string | null;
   slot_min: number; min_notice_h: number; max_days: number; deposit_note: string | null;
-  cover: string | null; about: string | null;
+  cover: string | null; about: string | null; preview?: boolean | null;
 };
 export type Servicio = {
   id: string; center_id: string; name: string; description: string | null; category: string | null;
@@ -24,6 +24,9 @@ export type Resena = { id: string; center_id: string; name: string; rating: numb
 
 // Emoji y color pastel según la categoría (cuando el servicio no tiene foto)
 const ESTILOS: [RegExp, string, string][] = [
+  [/kids|teens|niñ/i, "🎀", "#fde2ea"],
+  [/maquill|peinad/i, "💄", "#fbd3e0"],
+  [/alisad|capilar|cabell|pelo|laminad|keratin|keractiv|nutritiv|tratamiento/i, "💇‍♀️", "#f9d5e5"],
   [/uñ|manic|pedic|pies/i, "💅", "#f9d5e5"],
   [/depil|láser|laser|cera/i, "🌸", "#e6dcf7"],
   [/facial|piel|peeling|dermap/i, "🌿", "#d4f0e4"],
@@ -33,4 +36,11 @@ const ESTILOS: [RegExp, string, string][] = [
 export function estiloCategoria(cat: string | null) {
   const e = ESTILOS.find(([r]) => r.test(cat ?? ""));
   return { emoji: e?.[1] ?? "✨", color: e?.[2] ?? "#f6e3ea" };
+}
+
+// Link de WhatsApp del centro: acepta número (549...) o un link wa.me/message/...
+export function waUrl(whatsapp: string | null, texto?: string) {
+  if (!whatsapp) return null;
+  if (/^https?:\/\//.test(whatsapp)) return whatsapp;
+  return `https://wa.me/${whatsapp.replace(/\D/g, "")}${texto ? `?text=${encodeURIComponent(texto)}` : ""}`;
 }

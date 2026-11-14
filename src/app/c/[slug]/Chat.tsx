@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Centro, Profesional, Servicio } from "@/lib/tipos";
-import { estiloCategoria, haceServicio } from "@/lib/tipos";
+import { estiloCategoria, haceServicio, waUrl } from "@/lib/tipos";
 import { diaSemana, duracion, hoyAR, lindaFecha, pesos, sumarDias } from "@/lib/tiempo";
 
 // Asistente de reservas con estilo WhatsApp, dentro de la página del centro.
@@ -62,7 +62,7 @@ export default function Chat({ centro, servicios, profesionales, dias }: {
     bot([{ de: "bot", texto: `Estamos en ${centro.address} 📍`, link: { texto: "Ver en el mapa", href: `https://maps.google.com/?q=${encodeURIComponent(centro.address ?? "")}` } }], [op("📅 Reservar un turno", () => elegirCategoria()), volver]);
   }
   function persona() {
-    bot([{ de: "bot", texto: "¡Dale! Te paso con alguien del equipo por WhatsApp 😊", link: { texto: "Abrir WhatsApp", href: `https://wa.me/${centro.whatsapp}?text=${encodeURIComponent("Hola! Tengo una consulta.")}` } }], [volver]);
+    bot([{ de: "bot", texto: "¡Dale! Te paso con alguien del equipo por WhatsApp 😊", link: { texto: "Abrir WhatsApp", href: waUrl(centro.whatsapp, "Hola! Tengo una consulta.")! } }], [volver]);
   }
 
   function elegirCategoria() {
