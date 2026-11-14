@@ -122,7 +122,7 @@ export default function Chat({ centro, servicios, profesionales, dias }: {
     bot([
       { de: "bot", texto: `¡Listo, ${nombre.split(" ")[0]}! 🎉 Tu turno quedó reservado.`, link },
       ...(s!.deposit > 0 ? [centro.deposit_note ? `💳 Seña de ${pesos(s!.deposit)}. ${centro.deposit_note}` : `💳 Para asegurar tu lugar te pedimos una seña de ${pesos(s!.deposit)}.`] : []),
-      "Te vamos a mandar un recordatorio antes del turno. ¡Te esperamos! 💗",
+      "Desde ese link podés confirmar o cancelar cuando quieras. ¡Te esperamos! 💗",
     ], [op("📅 Reservar otro turno", () => elegirCategoria()), volver]);
   }
 
