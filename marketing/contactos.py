@@ -42,17 +42,33 @@ C = [
  ("Lanús","Depilación láser Soprano Ice (Lizhere)","Valentín Alsina","5491165686059","Depilación láser","","https://lizherediasalon.com/depilacion-definitiva-laser/"),
  ("Lanús","Actual Nails","Lanús Oeste","5491161581235","Uñas, pestañas, cejas, depilación","","https://wandastore.com.ar/cosmetica/actual/"),
  ("Lanús","Estética Daniela Martínez","Lanús Oeste","5491131910651","Faciales, pestañas, manos, depilación","","https://caras.perfil.com/noticias/caras-like/estetica-daniela-martinez.phtml"),
+
+ # --- Tanda 3 (14/11/2026) ---
+ ("Capital","Ser Estética","Villa Devoto (Av. Beiró 4653)","5491134208765","Depilación láser y cera, manos y pies, masajes","","https://www.serestetica.ar/"),
+ ("Capital","NIKI Beauty Bar Recoleta II","Recoleta","5491170659515","Manicura, pedicura, semipermanente","Cadena NIKI (varias sedes). Ya tiene reserva online.","https://www.sensoria.com.ar/spa/niki-beauty-bar-recoleta-ii/"),
+ ("Banfield","ISAMORA Luxury Skin","Banfield","5491156260275","Depilación definitiva, faciales, corporales","","https://www.isamora.com.ar/"),
+ ("Banfield","The Original Beauty Bar","Cochabamba 246","5491132864130","Manicuría, cejas, pestañas, depilación","Usa AgendaPro (la competencia).","https://beautybarbanfield.site.agendapro.com/ar/sucursal/87615"),
+ ("Banfield","Harmonic Senses Estética","Hipólito Yrigoyen 7297","5491125534455","Estética integral","","https://www.instagram.com/harmonic.senses/"),
+ ("Banfield","Plena Beauty & Spa","Banfield","5491157666050","Depilación definitiva, corporales, spa","Dato viejo: el número puede haber cambiado.","https://plenabeautyspa.com/"),
+ ("Avellaneda y Wilde","Estética SM","Wilde (Las Flores 389)","5491157827975","Manos, pies, depilación, faciales, pestañas y cejas","Atiende sobre todo por WhatsApp.","https://wandastore.com.ar/cosmetica/estetica-sm/"),
+ ("Avellaneda y Wilde","Estética Amore","Wilde (Mitre 6020)","5491162863037","Depilación láser","Usa AgendaPro (la competencia).","https://www.esteticaamore.com/"),
+ ("Quilmes","Oasis Estética Quilmes","General Paz 420","5491167566341","Estética","","https://www.instagram.com/oasisesteticaquilmes/"),
+ ("Monte Grande","Victoria's Beauty","Arana 288","5491161922802","Depilación definitiva, cejas, pestañas, semipermanente","","https://www.facebook.com/p/Victorias-Beauty-100042938840622/"),
+ ("Monte Grande","Dra. Coria & Zulma Depilación","Las Heras 158, 3°","5491165902981","Faciales, depilación, masajes, spa","","https://wandastore.com.ar/cosmetica/estetica-medica-dra-coria-zulma-depilacion-monte-grande/"),
+ ("Monte Grande","AC Centro de Medicina Estética","Av. Nuestras Malvinas 391","5491163645080","Faciales y corporales","Dato de hace más de 2 años.","https://consultorioac.com/contacto/"),
  # --- Zona Norte (lista anterior) ---
  ("Zona Norte","Beauty Infinit","Olivos","5491150501114","Depilación láser, estética","Cadena con sucursales.","https://beautyinfinit.com.ar/sucursales/vicente-lopez/"),
  ("Zona Norte","Siempre Bella","Vicente López","5491167184339","Láser, skincare, medicina estética","","https://siempre-bella.ar/"),
 ]
-NUEVOS = {"Estética Funcional","Depi Esthetic","Mundo Depilación","Rostro Perfecto","Skinesthetic","Estética Buenos Aires","Mia Estética",
-          "Reina Mora Estética Integral","Betty García Estética","DepiHills","DG Estética Beauty Bar","AGP Estética",
-          "Isabel Grimoldi Estética Avanzada","Depilación láser Soprano Ice (Lizhere)","Actual Nails","Estética Daniela Martínez"}
+# Los de la última tanda (llevan la etiqueta "nuevo")
+NUEVOS = {"Ser Estética","NIKI Beauty Bar Recoleta II","ISAMORA Luxury Skin","The Original Beauty Bar","Harmonic Senses Estética",
+          "Plena Beauty & Spa","Estética SM","Estética Amore","Oasis Estética Quilmes","Victoria's Beauty",
+          "Dra. Coria & Zulma Depilación","AC Centro de Medicina Estética"}
 # Botón principal: abre la app WhatsApp común (whatsapp://). Respaldo: wa.me (el celu elige la app).
 link = "whatsapp://send?phone={}&text=" + urllib.parse.quote(MENSAJE)
 respaldo = "https://wa.me/{}?text=" + urllib.parse.quote(MENSAJE)
-zonas = []
+ORDEN = ["Capital · los más fuertes","Capital","Lomas de Zamora","Banfield","Lanús","Avellaneda y Wilde","Quilmes","Monte Grande","Zona Norte"]
+zonas = [z for z in ORDEN if any(c[0]==z for c in C)]
 for c in C:
     if c[0] not in zonas: zonas.append(c[0])
 cuerpo = ""
