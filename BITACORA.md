@@ -31,9 +31,16 @@
   dirección y pasa con una persona por WhatsApp real. La seña todavía no se cobra (falta Mercado Pago).
 - Nueva dirección: https://turnia-turnos.pages.dev (la vieja con "decobazar" quedó apagada). `turnia.pages.dev` ya estaba tomado.
 
+
+## 14/11/2026 – Lista de estéticas y mensajes de venta
+- `marketing/contactos.html`: 14 centros de CABA y Zona Norte con WhatsApp público (sacado de su web o Instagram, con link a la fuente),
+  botón que abre WhatsApp con el mensaje ya escrito y personalizado, y casilla "Ya le escribí".
+- Mensajes: A (centro sin turnos online), B (ya usa turnos online), C (insistir a los 3 días), D (si dicen que sí: qué datos pedirles).
+- Consejos: 10-15 por día, desde WhatsApp Business, 10-12 h o 15-18 h.
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
-- Lista de centros de estética para contactar + mensaje de venta.
+- Ampliar la lista de estéticas a otras zonas (preguntarle a Belén cuáles).
 - Definir nombre y precios finales. Con el nombre final, comprar dominio propio (ej. .com.ar) y conectarlo.
 - WhatsApp real automático (API oficial de Meta) para el bot y los recordatorios.
