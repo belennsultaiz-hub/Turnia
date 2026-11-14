@@ -46,10 +46,17 @@
 - Arriba dice "Vista previa armada por Turnia para Glow · todavía no es su página oficial" (`centers.preview`), para que ninguna clienta real reserve creyendo que es oficial.
 - El WhatsApp del centro puede ser número o link `wa.me/message/...` (`waUrl()` en tipos.ts).
 
+
+## 14/11/2026 – Más contactos (Capital, Lomas de Zamora, Lanús) con el mensaje de Belén
+- `marketing/contactos.html` ahora tiene 30 centros (16 nuevos): Capital "los más fuertes" (cadenas y centros con notas en revistas),
+  Lomas de Zamora (5) y Lanús (4), además de los 14 de antes. Todos los botones usan el mensaje que escribió Belén.
+- La lista y el mensaje se editan en `marketing/contactos.py` (correr `python3 contactos.py` para regenerar el HTML).
+- No pude confirmar puntajes ni seguidores de la mayoría: "fuertes" = cadenas con varias sedes o con notas/reseñas publicadas.
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
 - Glow: si les gusta, crear su usuaria del panel, sacar `preview` y confirmar duraciones/horarios.
-- Ampliar la lista de estéticas a otras zonas (preguntarle a Belén cuáles).
+- Ampliar la lista de estéticas si Belén pide más zonas (ya hay CABA, Zona Norte, Lomas, Lanús).
 - Definir nombre y precios finales. Con el nombre final, comprar dominio propio (ej. .com.ar) y conectarlo.
 - WhatsApp real automático (API oficial de Meta) para el bot y los recordatorios.
