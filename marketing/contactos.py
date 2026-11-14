@@ -49,7 +49,9 @@ C = [
 NUEVOS = {"Estética Funcional","Depi Esthetic","Mundo Depilación","Rostro Perfecto","Skinesthetic","Estética Buenos Aires","Mia Estética",
           "Reina Mora Estética Integral","Betty García Estética","DepiHills","DG Estética Beauty Bar","AGP Estética",
           "Isabel Grimoldi Estética Avanzada","Depilación láser Soprano Ice (Lizhere)","Actual Nails","Estética Daniela Martínez"}
-link = "https://wa.me/{}?text=" + urllib.parse.quote(MENSAJE)
+# Botón principal: abre la app WhatsApp común (whatsapp://). Respaldo: wa.me (el celu elige la app).
+link = "whatsapp://send?phone={}&text=" + urllib.parse.quote(MENSAJE)
+respaldo = "https://wa.me/{}?text=" + urllib.parse.quote(MENSAJE)
 zonas = []
 for c in C:
     if c[0] not in zonas: zonas.append(c[0])
@@ -63,7 +65,8 @@ for z in zonas:
         cuerpo += f"""<li><div class="cab"><b>{html.escape(n)} {nuevo}</b><span>{html.escape(b)}</span></div>
 <small>{html.escape(s)} · 📱 {lindo} · <a href="{f}" target="_blank">fuente</a></small>
 {f'<p class="nota">⚠️ {html.escape(nota)}</p>' if nota else ''}
-<a class="wa" href="{link.format(num)}" target="_blank">Enviar mensaje por WhatsApp</a>
+<a class="wa" href="{link.format(num)}">Enviar por WhatsApp</a>
+<a class="respaldo" href="{respaldo.format(num)}" target="_blank">¿No abre? Probá con este otro link</a>
 <label class="hecho"><input type="checkbox" data-id="{num}"> Ya le escribí</label></li>"""
     cuerpo += "</ul>"
 page = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -78,11 +81,12 @@ ul{{list-style:none;padding:0}} li{{background:#fff;border-radius:16px;padding:1
 .nuevo{{font-style:normal;font-size:.7rem;background:#d4f0e4;color:#1e7b45;border-radius:999px;padding:2px 8px;vertical-align:middle}}
 small{{color:#7a6e6e;display:block;margin:4px 0 8px}} .nota{{background:#fff6e6;border-radius:10px;padding:6px 10px;font-size:.85rem;margin:6px 0}}
 .wa{{display:block;text-align:center;background:#25d366;color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:11px}}
+.respaldo{{display:block;text-align:center;font-size:.8rem;color:#7a6e6e;margin-top:6px}}
 .hecho{{display:block;margin-top:8px;font-size:.9rem;color:#7a6e6e}} li.ok{{opacity:.5}}
 </style></head><body><main>
 <h1>💗 Estéticas para contactar</h1>
-<p>{len(C)} centros. Tocá el botón verde: se abre WhatsApp con tu mensaje ya escrito. Después marcá “Ya le escribí”.</p>
-<div class="tips"><b>Para que WhatsApp no te bloquee:</b><br>• 10 a 15 por día, no todos juntos.<br>• Mejor desde WhatsApp Business, con foto y nombre.<br>• De lunes a viernes, 10 a 12 h o 15 a 18 h.<br>• Si no contestan, insistí una sola vez a los 3 días.</div>
+<p>{len(C)} centros. Tocá el botón verde: se abre la app <b>WhatsApp común</b> (no la Business) con tu mensaje ya escrito. Después marcá “Ya le escribí”.</p>
+<div class="tips"><b>Para que WhatsApp no te bloquee:</b><br>• 10 a 15 por día, no todos juntos.<br>• Poné foto y tu nombre en el perfil, así ven quién les escribe.<br>• De lunes a viernes, 10 a 12 h o 15 a 18 h.<br>• Si no contestan, insistí una sola vez a los 3 días.</div>
 <details><summary style="margin-top:12px;cursor:pointer"><b>Ver el mensaje que se manda</b></summary><pre>{html.escape(MENSAJE)}</pre></details>
 <p style="font-size:.85rem;color:#7a6e6e">Los números salen de la web, Instagram o notas de cada centro (link “fuente”). No los probé uno por uno: alguno puede estar viejo.</p>
 {cuerpo}

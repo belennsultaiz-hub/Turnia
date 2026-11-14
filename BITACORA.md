@@ -50,6 +50,7 @@
 ## 14/11/2026 – Más contactos (Capital, Lomas de Zamora, Lanús) con el mensaje de Belén
 - `marketing/contactos.html` ahora tiene 30 centros (16 nuevos): Capital "los más fuertes" (cadenas y centros con notas en revistas),
   Lomas de Zamora (5) y Lanús (4), además de los 14 de antes. Todos los botones usan el mensaje que escribió Belén.
+- Belén quiere mandar desde WhatsApp común (no Business): el botón usa `whatsapp://send?phone=...&text=...` y abajo hay un link de respaldo `wa.me`.
 - La lista y el mensaje se editan en `marketing/contactos.py` (correr `python3 contactos.py` para regenerar el HTML).
 - No pude confirmar puntajes ni seguidores de la mayoría: "fuertes" = cadenas con varias sedes o con notas/reseñas publicadas.
 
