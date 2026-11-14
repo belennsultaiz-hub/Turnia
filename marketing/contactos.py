@@ -124,3 +124,53 @@ def armar(C, titulo, archivo):
 
 armar(C, "Estéticas para contactar", "contactos.html")
 armar([c for c in C if c[1] in NUEVOS], "Estéticas nuevas para contactar", "contactos_nuevos.html")
+
+# ---------------- Mails ----------------
+# (nombre como en C, mail, nota)
+MAILS = [
+ ("Estética Buenos Aires", "turnos@esteticabuenosaires.com", "Sale de su página. Otro: recepcion@esteticabuenosaires.com"),
+ ("Minah Club", "minahspaclub@gmail.com", ""),
+ ("Cejas Prolijas & SkinCare", "info@cejasprolijas.com.ar", ""),
+ ("Depi Esthetic", "depiesthetics@hotmail.com", "Sale de un directorio: puede estar viejo."),
+ ("Ser Estética", "seresteticavilladevoto@gmail.com", ""),
+ ("Betty García Estética", "bettygarciaestetica@gmail.com", "Su página es vieja: puede no usarlo más."),
+ ("Isabel Grimoldi Estética Avanzada", "info@isabelgrimoldi.com.ar", ""),
+ ("Depilación láser Soprano Ice (Lizhere)", "info@lizherediasalon.com", "Es el mail de Liz Heredia Salón."),
+ ("Plena Beauty & Spa", "info@plenabeautyspa.com", ""),
+ ("Estética Amore", "esteticaamore@gmail.com", ""),
+ ("AC Centro de Medicina Estética", "hola@consultorioac.com", "Página de hace más de 2 años."),
+ ("Beauty Infinit", "vicentelopez@beautyinfinit.com.ar", "Sucursal Olivos/Vicente López."),
+ ("Siempre Bella", "info@siempre-bella.com.ar", "Sale de su Facebook: verificar."),
+]
+ASUNTO = "Turnos online para su centro 💗"
+CUERPO = MENSAJE + "\n\nBelén · Turnia\nWhatsApp 11 5422-9687"
+porNombre = {c[1]: c for c in C}
+filas = ""
+for n, mail, nota in MAILS:
+    c = porNombre[n]
+    href = "mailto:" + mail + "?subject=" + urllib.parse.quote(ASUNTO) + "&body=" + urllib.parse.quote(CUERPO)
+    filas += f"""<li><div class="cab"><b>{html.escape(n)}</b><span>{html.escape(c[2])}</span></div>
+<small>✉️ <span class="mail">{mail}</span> · <a href="{c[6]}" target="_blank">fuente</a></small>
+{f'<p class="nota">⚠️ {html.escape(nota)}</p>' if nota else ''}
+<a class="wa mailbtn" href="{href}">Escribir mail</a>
+<label class="hecho"><input type="checkbox" data-id="mail-{mail}"> Ya le mandé el mail</label></li>"""
+todos = ", ".join(m[1] for m in MAILS)
+pagina = open("contactos_nuevos.html").read().split("<body>")[0].replace("<title>Estéticas nuevas para contactar</title>", "<title>Mails de estéticas</title>")
+pagina += f"""<body><main>
+<h1>✉️ Mails de estéticas</h1>
+<p>{len(MAILS)} centros con mail. Tocá “Escribir mail”: se abre tu correo con el asunto y tu mensaje ya escritos.</p>
+<div class="tips"><b>Consejos:</b><br>• Mandalos de a uno (no todos juntos en el mismo mail, así no parece publicidad masiva).<br>• Si alguno rebota, ese mail ya no existe: pasá al siguiente.<br>• Revisá la carpeta de spam por si contestan desde ahí.</div>
+<details><summary style="margin-top:12px;cursor:pointer"><b>Ver el mail que se manda</b></summary><pre><b>Asunto:</b> {html.escape(ASUNTO)}
+
+{html.escape(CUERPO)}</pre></details>
+<ul>{filas}</ul>
+<h2>Todos los mails juntos (para copiar)</h2>
+<pre>{todos}</pre>
+<p style="font-size:.85rem;color:#7a6e6e">Los otros centros de la lista no publican mail: con ellos, WhatsApp.</p>
+</main><script>
+document.querySelectorAll('input[data-id]').forEach(c=>{{const k='hecho-'+c.dataset.id;try{{c.checked=localStorage.getItem(k)==='1'}}catch(e){{}}
+const pinta=()=>c.closest('li').classList.toggle('ok',c.checked);pinta();c.onchange=()=>{{try{{localStorage.setItem(k,c.checked?'1':'0')}}catch(e){{}};pinta()}}}});
+</script></body></html>"""
+pagina = pagina.replace("</style>", ".mailbtn{background:#c98ba0}\n</style>")
+open("mails.html", "w").write(pagina)
+print("mails.html", len(MAILS), "mails")

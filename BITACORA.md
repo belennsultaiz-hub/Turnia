@@ -56,6 +56,11 @@
 
 - Tanda 3: +12 contactos (Villa Devoto, Recoleta, Banfield, Wilde, Quilmes, Monte Grande). Total 42. Los de la última tanda llevan etiqueta "nuevo" y además salen solos en `marketing/contactos_nuevos.html` (Belén pidió recibir solo los nuevos, sin repetir).
 
+
+## 14/11/2026 – Mails de las estéticas
+- `marketing/mails.html`: 13 de los 42 centros tienen mail publicado (los demás solo WhatsApp). Botón "Escribir mail" abre el correo
+  con asunto "Turnos online para su centro 💗" y el mismo mensaje de Belén + firma. Lista de mails juntos para copiar. Se genera con `contactos.py` (lista `MAILS`).
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
