@@ -62,9 +62,16 @@
   con asunto "Turnos online para su centro 💗" y el mismo mensaje de Belén + firma. Lista de mails juntos para copiar. Se genera con `contactos.py` (lista `MAILS`).
 - Se crearon los 13 mails como borradores en el Gmail de Belén (no se envió nada). Los 13 también están en la lista de WhatsApp.
 
+
+## 16/11/2026 – Mails enviados
+- Belén mandó los 13 mails desde Gmail (16/11, ~6:40 h) con el texto original, sin la frase del cotizador.
+- Rebotó: info@isabelgrimoldi.com.ar (no existe) → contactarla por WhatsApp.
+- La plantilla de mail en `contactos.py` ahora suma: "en su página también podemos sumar un cotizador...". Idea: usarla en el mail de seguimiento.
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
+- Seguimiento de los 13 mails a los 3-4 días (mencionar el cotizador). Si piden cotizador: armarlo dentro de Turnia.
 - Glow: si les gusta, crear su usuaria del panel, sacar `preview` y confirmar duraciones/horarios.
 - Ampliar la lista de estéticas si Belén pide más zonas (ya hay CABA, Zona Norte, Lomas, Lanús).
 - Definir nombre y precios finales. Con el nombre final, comprar dominio propio (ej. .com.ar) y conectarlo.

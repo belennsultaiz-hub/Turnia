@@ -134,7 +134,7 @@ MAILS = [
  ("Depi Esthetic", "depiesthetics@hotmail.com", "Sale de un directorio: puede estar viejo."),
  ("Ser Estética", "seresteticavilladevoto@gmail.com", ""),
  ("Betty García Estética", "bettygarciaestetica@gmail.com", "Su página es vieja: puede no usarlo más."),
- ("Isabel Grimoldi Estética Avanzada", "info@isabelgrimoldi.com.ar", ""),
+ ("Isabel Grimoldi Estética Avanzada", "info@isabelgrimoldi.com.ar", "REBOTÓ el 16/11: ese mail no existe. Escribile por WhatsApp."),
  ("Depilación láser Soprano Ice (Lizhere)", "info@lizherediasalon.com", "Es el mail de Liz Heredia Salón."),
  ("Plena Beauty & Spa", "info@plenabeautyspa.com", ""),
  ("Estética Amore", "esteticaamore@gmail.com", ""),
@@ -143,7 +143,8 @@ MAILS = [
  ("Siempre Bella", "info@siempre-bella.com.ar", "Sale de su Facebook: verificar."),
 ]
 ASUNTO = "Turnos online para su centro 💗"
-CUERPO = MENSAJE + "\n\nBelén · Turnia\nWhatsApp 11 5422-9687"
+CUERPO = MENSAJE.replace("¿Les interesaría probarlo?",
+  "Además, en su página también podemos sumar un cotizador, para que las clientas calculen solas el presupuesto de su tratamiento.\n\n¿Les interesaría probarlo?") + "\n\nBelén · Turnia\nWhatsApp 11 5422-9687"
 porNombre = {c[1]: c for c in C}
 filas = ""
 for n, mail, nota in MAILS:
