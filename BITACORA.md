@@ -79,6 +79,14 @@
   (`precio()` en tiempo.ts). Inventado: duraciones, horario lun-sáb 9-19, agenda "Equipo Oasis". Sin reseñas (no inventamos reseñas de un centro real).
 - El token de la Management API de Supabase dejó de andar ("Invalid access token"). Oasis se cargó por la API REST con la service role (`.dev.vars`).
 
+
+## 17/11/2026 – Recordatorios: qué es gratis y qué es pago
+- Oasis preguntó por recordatorio automático. Gratis/incluido: mail automático (a armar con Brevo) + botón WhatsApp manual del panel.
+  Pago: WhatsApp automático (API oficial de Meta). Tarifa "utilidad" Argentina ≈ US$ 0,026 por mensaje (rate card Meta oct/2026, según
+  sleekflow/martechcost; Infobip cobra más). Una fuente en pesos: $37,68 por mensaje (abr/2026). Ej.: 200 recordatorios ≈ US$ 5,2/mes.
+- Para WhatsApp automático hace falta: cuenta Meta Business verificada (CUIT/constancia ARCA), un número nuevo dedicado, app en
+  developers.facebook.com, tarjeta para pagar a Meta, plantilla "recordatorio de turno" aprobada. Propuesta: un número de Turnia para todos los centros.
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
