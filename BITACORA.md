@@ -88,7 +88,7 @@
   developers.facebook.com, tarjeta para pagar a Meta, plantilla "recordatorio de turno" aprobada. Propuesta: un número de Turnia para todos los centros.
 
 - PDF para los centros: `marketing/Turnia_recordatorios_de_turnos.pdf` (fuente `recordatorios.html`). Precios que definió Belén para el WhatsApp automático:
-  hasta 200 mensajes $10.000/mes + $100.000 de configuración (única vez); hasta 400 mensajes $20.000/mes sin costo de configuración.
+  hasta 200 mensajes $10.000/mes + $100.000 de configuración (única vez); hasta 400 mensajes $20.000/mes + $100.000 de configuración (corregido 17/11: los dos planes pagan configuración una sola vez; si pasan de 200 a 400 no se vuelve a pagar).
   Incluido sin costo: recordatorio por mail + botón WhatsApp del panel.
 
 ## Pendiente
