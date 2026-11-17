@@ -74,11 +74,17 @@
   masajes descontracturantes y reductores, Liposonix, Vela Slim, BodyBup, HIFU, corporales con aparatología, depilación definitiva.
 - Le pasamos a Belén el mensaje con la info (precios estimativos, 14 días gratis) y la propuesta de armarles su página de prueba como la de Glow.
 
+- Página de prueba de Oasis: https://turnia-turnos.pages.dev/c/oasis (vista previa). 11 servicios en Faciales, Corporales, Masajes y Depilación,
+  con fotos de Pexels (`public/oasis/`) y su logo recortado del WhatsApp. Sin precios (no los mandaron): la página dice "Consultá precio"
+  (`precio()` en tiempo.ts). Inventado: duraciones, horario lun-sáb 9-19, agenda "Equipo Oasis". Sin reseñas (no inventamos reseñas de un centro real).
+- El token de la Management API de Supabase dejó de andar ("Invalid access token"). Oasis se cargó por la API REST con la service role (`.dev.vars`).
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
 - Seguimiento de los 13 mails a los 3-4 días (mencionar el cotizador). Si piden cotizador: armarlo dentro de Turnia.
-- Oasis: si mandan su lista de precios, armar su página de prueba (slug `oasis`).
+- Oasis: cargar sus precios cuando los manden.
+- Pedirle a Belén que renueve el token de Supabase en el entorno (la Management API da "Invalid access token").
 - Glow: si les gusta, crear su usuaria del panel, sacar `preview` y confirmar duraciones/horarios.
 - Ampliar la lista de estéticas si Belén pide más zonas (ya hay CABA, Zona Norte, Lomas, Lanús).
 - Definir nombre y precios finales. Con el nombre final, comprar dominio propio (ej. .com.ar) y conectarlo.

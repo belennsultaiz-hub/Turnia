@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Centro, Profesional, Servicio } from "@/lib/tipos";
 import { estiloCategoria, haceServicio, waUrl } from "@/lib/tipos";
-import { diaSemana, duracion, hoyAR, lindaFecha, pesos, sumarDias } from "@/lib/tiempo";
+import { diaSemana, duracion, hoyAR, lindaFecha, pesos, precio, sumarDias } from "@/lib/tiempo";
 
 // Asistente de reservas con estilo WhatsApp, dentro de la página del centro.
 type Opcion = { texto: string; accion: () => void };
@@ -55,7 +55,7 @@ export default function Chat({ centro, servicios, profesionales, dias }: {
   const menu = () => bot(["¿En qué más te puedo ayudar? 💗"], opsMenu());
 
   function precios() {
-    const lineas = categorias.map((c) => `${estiloCategoria(c).emoji} *${c}*\n` + servicios.filter((s) => (s.category || "Servicios") === c).map((s) => `• ${s.name}: ${pesos(s.price)}`).join("\n"));
+    const lineas = categorias.map((c) => `${estiloCategoria(c).emoji} *${c}*\n` + servicios.filter((s) => (s.category || "Servicios") === c).map((s) => `• ${s.name}: ${precio(s.price)}`).join("\n"));
     bot([...lineas, "¿Querés reservar alguno?"], [op("📅 Sí, reservar", () => elegirCategoria()), volver]);
   }
   function donde() {
@@ -71,12 +71,12 @@ export default function Chat({ centro, servicios, profesionales, dias }: {
   }
   function elegirServicio(cat: string) {
     const lista = servicios.filter((s) => (s.category || "Servicios") === cat);
-    bot(["Elegí el servicio 👇"], [...lista.map((s) => op(`${s.name} · ${pesos(s.price)}`, () => servicioElegido(s))), op("↩️ Otra categoría", () => elegirCategoria())]);
+    bot(["Elegí el servicio 👇"], [...lista.map((s) => op(`${s.name} · ${precio(s.price)}`, () => servicioElegido(s))), op("↩️ Otra categoría", () => elegirCategoria())]);
   }
   function servicioElegido(s: Servicio) {
     r.current.servicio = s;
     const aptas = profesionales.filter((p) => haceServicio(p, s.id));
-    const info = `${s.name}: ${duracion(s.duration_min)}, ${pesos(s.price)}${s.deposit > 0 ? ` (seña ${pesos(s.deposit)})` : ""}.`;
+    const info = `${s.name}: ${duracion(s.duration_min)}, ${precio(s.price)}${s.deposit > 0 ? ` (seña ${pesos(s.deposit)})` : ""}.`;
     if (aptas.length <= 1) { r.current.prof = aptas[0]?.id ?? ""; return elegirDia([info]); }
     bot([info, "¿Con quién te querés atender?"], [op("✨ Me da igual", () => { r.current.prof = ""; elegirDia(); }), ...aptas.map((p) => op(`${p.name}${p.role ? ` · ${p.role}` : ""}`, () => { r.current.prof = p.id; elegirDia(); }))]);
   }
@@ -108,7 +108,7 @@ export default function Chat({ centro, servicios, profesionales, dias }: {
   function confirmar(tel: string) {
     const { servicio: s, fecha, hora: h, prof } = r.current;
     const nombreProf = profesionales.find((p) => p.id === prof)?.name;
-    bot([`Te confirmo los datos:\n💆‍♀️ ${s!.name}\n📅 ${lindaFecha(fecha)} a las ${h} h${nombreProf ? `\n👩 Con ${nombreProf}` : ""}\n💲 Total ${pesos(s!.price)}${s!.deposit > 0 ? `\n💳 Seña ${pesos(s!.deposit)}` : ""}`, "¿Lo reservo?"],
+    bot([`Te confirmo los datos:\n💆‍♀️ ${s!.name}\n📅 ${lindaFecha(fecha)} a las ${h} h${nombreProf ? `\n👩 Con ${nombreProf}` : ""}\n💲 ${s!.price > 0 ? `Total ${pesos(s!.price)}` : "Precio a confirmar"}${s!.deposit > 0 ? `\n💳 Seña ${pesos(s!.deposit)}` : ""}`, "¿Lo reservo?"],
       [op("✅ Sí, reservar", () => reservar(tel)), op("✏️ Cambiar algo", () => elegirCategoria())]);
   }
   async function reservar(tel: string) {

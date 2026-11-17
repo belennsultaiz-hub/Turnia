@@ -23,3 +23,5 @@ export function duracion(min: number) {
   const h = Math.floor(min / 60), m = min % 60;
   return h ? `${h} h${m ? ` ${m} min` : ""}` : `${m} min`;
 }
+// Precio de un servicio: si el centro no lo cargó (0), se muestra "Consultá precio"
+export const precio = (n: number) => (Number(n) > 0 ? pesos(n) : "Consultá precio");

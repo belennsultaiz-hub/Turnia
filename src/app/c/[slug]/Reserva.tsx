@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { Centro, Profesional, Resena, Servicio } from "@/lib/tipos";
 import { estiloCategoria, haceServicio, waUrl } from "@/lib/tipos";
 import Chat from "./Chat";
-import { diaSemana, duracion, hoyAR, lindaFecha, pesos, sumarDias } from "@/lib/tiempo";
+import { diaSemana, duracion, hoyAR, lindaFecha, pesos, precio, sumarDias } from "@/lib/tiempo";
 
 type Props = { centro: Centro; servicios: Servicio[]; profesionales: Profesional[]; dias: Record<string, number[]>; resenas: Resena[] };
 
@@ -114,7 +114,7 @@ export default function Reserva({ centro, servicios, profesionales, dias, resena
                     <div className="serv-txt">
                       <b>{s.name}</b>
                       {s.description && <small>{s.description}</small>}
-                      <div className="serv-pie"><strong>{pesos(s.price)}</strong><small>⏱ {duracion(s.duration_min)}</small></div>
+                      <div className="serv-pie"><strong>{precio(s.price)}</strong><small>⏱ {duracion(s.duration_min)}</small></div>
                     </div>
                   </button>
                 ))}
@@ -170,7 +170,7 @@ export default function Reserva({ centro, servicios, profesionales, dias, resena
           <div className="resumen">
             <b>{servicio.name}</b>
             <span>📅 {lindaFecha(fecha)} a las {hora} h{prof ? ` con ${nombreProf(prof)}` : ""}</span>
-            <span>💗 Total {pesos(servicio.price)}{servicio.deposit > 0 ? ` · Seña ${pesos(servicio.deposit)}` : ""}</span>
+            <span>💗 {servicio.price > 0 ? `Total ${pesos(servicio.price)}` : "Precio a confirmar con el centro"}{servicio.deposit > 0 ? ` · Seña ${pesos(servicio.deposit)}` : ""}</span>
           </div>
           <form onSubmit={reservar} className="form">
             <label>Nombre y apellido<input required value={datos.nombre} onChange={(e) => setDatos({ ...datos, nombre: e.target.value })} /></label>

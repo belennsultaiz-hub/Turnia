@@ -28,7 +28,7 @@ export default async function Page({ params, searchParams }: { params: Promise<{
         <p>📅 {cuando}</p>
         {p && <p>💆‍♀️ Con {p.name}</p>}
         {c.address && <p>📍 {c.address}</p>}
-        <p>💲 Total {pesos(t.price)}{t.deposit > 0 ? ` · Seña ${pesos(t.deposit)} ${t.deposit_paid ? "(pagada)" : "(pendiente)"}` : ""}</p>
+        <p>💲 {t.price > 0 ? `Total ${pesos(t.price)}` : "Precio a confirmar con el centro"}{t.deposit > 0 ? ` · Seña ${pesos(t.deposit)} ${t.deposit_paid ? "(pagada)" : "(pendiente)"}` : ""}</p>
         {t.deposit > 0 && !t.deposit_paid && c.deposit_note && <p className="nota">{c.deposit_note}</p>}
         <p className={`estado ${t.status}`}>Estado: {t.status}</p>
         <Acciones token={token} estado={t.status} futuro={new Date(t.starts_at).getTime() > Date.now()} />

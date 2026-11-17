@@ -33,6 +33,7 @@ Hablar en español rioplatense y paso a paso (Belén no programa; su pareja sí)
 - La base no deja turnos superpuestos por profesional (constraint `sin_superponer`).
 
 ## Base de datos (supabase/)
-`schema.sql` → `seed_demo.sql` (centro de ejemplo slug `demo`) → `02_no_superponer.sql` → `seed_demo_v2.sql` (18 servicios) → `seed_demo_turnos.sql` (turnos ficticios, fechas relativas a hoy) → `03_fotos_resenas.sql` (fotos, reseñas, bucket `fotos`) → `seed_demo_v3.sql` (textos y reseñas) → `seed_demo_fotos.sql` → `04_fotos_relativas.sql` → `centro_glow.sql` (Glow Alisados, slug `glow`) → `05_vista_previa.sql`.
+`schema.sql` → `seed_demo.sql` (centro de ejemplo slug `demo`) → `02_no_superponer.sql` → `seed_demo_v2.sql` (18 servicios) → `seed_demo_turnos.sql` (turnos ficticios, fechas relativas a hoy) → `03_fotos_resenas.sql` (fotos, reseñas, bucket `fotos`) → `seed_demo_v3.sql` (textos y reseñas) → `seed_demo_fotos.sql` → `04_fotos_relativas.sql` → `centro_glow.sql` (Glow Alisados, slug `glow`) → `05_vista_previa.sql` → `centro_oasis.sql` (Oasis Estética, slug `oasis`; se cargó por REST).
+Si la Management API falla, se puede escribir con la API REST (`$SUPABASE_URL/rest/v1/...`) usando la service role de `.dev.vars` (el host ya está permitido).
 Usuario demo del panel: `demo@turnia.app` (centro demo).
 Alta de un centro nuevo: insert en `centers` + usuaria en auth + fila en `center_users` (por ahora lo hacemos nosotros).
