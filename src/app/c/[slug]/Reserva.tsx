@@ -114,7 +114,7 @@ export default function Reserva({ centro, servicios, profesionales, dias, resena
                     <div className="serv-txt">
                       <b>{s.name}</b>
                       {s.description && <small>{s.description}</small>}
-                      <div className="serv-pie"><strong>{precio(s.price)}</strong><small>⏱ {duracion(s.duration_min)}</small></div>
+                      <div className="serv-pie"><strong className={s.price > 0 ? "" : "consulta"}>{precio(s.price)}</strong><small>⏱ {duracion(s.duration_min)}</small></div>
                     </div>
                   </button>
                 ))}
