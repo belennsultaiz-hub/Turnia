@@ -68,10 +68,17 @@
 - Rebotó: info@isabelgrimoldi.com.ar (no existe) → contactarla por WhatsApp.
 - La plantilla de mail en `contactos.py` ahora suma: "en su página también podemos sumar un cotizador...". Idea: usarla en el mail de seguimiento.
 
+
+## 17/11/2026 – Primera respuesta: Oasis Estética (Quilmes)
+- Oasis pidió información por WhatsApp. Servicios que ofrecen (de su mensaje automático): faciales, limpieza facial, plasma rico en plaquetas,
+  masajes descontracturantes y reductores, Liposonix, Vela Slim, BodyBup, HIFU, corporales con aparatología, depilación definitiva.
+- Le pasamos a Belén el mensaje con la info (precios estimativos, 14 días gratis) y la propuesta de armarles su página de prueba como la de Glow.
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
 - Seguimiento de los 13 mails a los 3-4 días (mencionar el cotizador). Si piden cotizador: armarlo dentro de Turnia.
+- Oasis: si mandan su lista de precios, armar su página de prueba (slug `oasis`).
 - Glow: si les gusta, crear su usuaria del panel, sacar `preview` y confirmar duraciones/horarios.
 - Ampliar la lista de estéticas si Belén pide más zonas (ya hay CABA, Zona Norte, Lomas, Lanús).
 - Definir nombre y precios finales. Con el nombre final, comprar dominio propio (ej. .com.ar) y conectarlo.
