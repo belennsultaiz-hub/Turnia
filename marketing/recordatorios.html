@@ -1,0 +1,98 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "DM Sans", sans-serif; color: #2d2424; font-size: 11pt; line-height: 1.5; }
+.pag { width: 210mm; min-height: 297mm; padding: 18mm 18mm 14mm; position: relative; page-break-after: always; background: #fdf7f6; }
+.pag:last-child { page-break-after: auto; }
+h1, h2, h3 { font-family: "Playfair Display", serif; margin: 0; }
+.marca { color: #c98ba0; font-weight: 700; font-size: 13pt; letter-spacing: .02em; }
+.portada { background: linear-gradient(135deg, #f9d5e5 0%, #e6dcf7 55%, #d4f0e4 100%); border-radius: 22px; padding: 26px 28px; margin: 14px 0 22px; }
+.portada h1 { font-size: 28pt; line-height: 1.1; }
+.portada p { font-size: 12.5pt; margin: 10px 0 0; max-width: 140mm; }
+h2 { font-size: 17pt; margin: 22px 0 10px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card { background: #fff; border-radius: 16px; padding: 14px 16px; box-shadow: 0 3px 14px #c98ba01a; }
+.card h3 { font-size: 13pt; margin-bottom: 4px; }
+.tag { display: inline-block; font-size: 8.5pt; font-weight: 700; border-radius: 999px; padding: 2px 10px; margin-bottom: 6px; }
+.gratis { background: #d4f0e4; color: #1e7b45; } .pago { background: #fde2cf; color: #9a5a1c; }
+ul { margin: 6px 0 0; padding-left: 18px; } li { margin: 3px 0; }
+.wa { background: #efeae2; border-radius: 16px; padding: 14px; }
+.burbuja { background: #fff; border-radius: 10px 10px 10px 2px; padding: 10px 12px; font-size: 10.5pt; max-width: 100%; box-shadow: 0 1px 1px #0000001f; }
+.botones { display: flex; gap: 6px; margin-top: 6px; }
+.botones span { flex: 1; text-align: center; background: #fff; color: #008069; font-weight: 700; border-radius: 8px; padding: 6px; font-size: 10pt; box-shadow: 0 1px 1px #0000001f; }
+.planes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
+.plan { background: #fff; border-radius: 18px; padding: 16px 18px; border: 2px solid transparent; box-shadow: 0 3px 14px #c98ba01a; position: relative; }
+.plan.dest { border-color: #c98ba0; }
+.plan .etq { position: absolute; top: -10px; right: 14px; background: #c98ba0; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 999px; padding: 2px 10px; }
+.precio { font-size: 22pt; font-weight: 700; color: #c98ba0; margin: 4px 0 0; }
+.precio small { font-size: 10pt; color: #7a6e6e; font-weight: 500; }
+.setup { font-size: 10pt; margin-top: 4px; }
+.pasos { counter-reset: p; list-style: none; padding: 0; }
+.pasos li { counter-increment: p; position: relative; padding-left: 38px; margin: 10px 0; }
+.pasos li::before { content: counter(p); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%; background: #c98ba0; color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 10pt; }
+.nota { font-size: 9.5pt; color: #7a6e6e; }
+.pie { position: absolute; bottom: 10mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; font-size: 9pt; color: #7a6e6e; border-top: 1px solid #eaded9; padding-top: 6px; }
+.contacto { background: #fff; border-radius: 16px; padding: 14px 18px; margin-top: 16px; box-shadow: 0 3px 14px #c98ba01a; }
+</style></head><body>
+
+<section class="pag">
+  <div class="marca">Turnia · Turnos online para centros de estética</div>
+  <div class="portada">
+    <h1>Recordatorios de turnos 💗</h1>
+    <p>Para que tus clientas no se olviden, confirmen su asistencia y vos te despreocupes de la agenda.</p>
+  </div>
+
+  <h2>¿Qué incluye?</h2>
+  <div class="grid">
+    <div class="card"><span class="tag gratis">INCLUIDO SIN COSTO</span><h3>✉️ Recordatorio por mail</h3>
+      <ul><li>Se envía solo, un día antes del turno.</li><li>Con el nombre de la clienta, el día y el horario.</li><li>Botones <b>Confirmo</b> y <b>Cancelo</b>.</li></ul></div>
+    <div class="card"><span class="tag gratis">INCLUIDO SIN COSTO</span><h3>📲 WhatsApp con un toque</h3>
+      <ul><li>Desde el panel ves los turnos de mañana.</li><li>Tocás “Recordar” y se abre WhatsApp con el mensaje ya armado.</li><li>Lo enviás vos, desde tu número.</li></ul></div>
+  </div>
+  <div class="card" style="margin-top:12px"><span class="tag pago">OPCIONAL · CON COSTO</span><h3>🤖 Recordatorio automático por WhatsApp</h3>
+    <ul><li>Le llega <b>solo</b> a cada clienta por WhatsApp, un día antes, sin que tengas que hacer nada.</li>
+    <li>La clienta responde con un botón y la respuesta aparece en tu agenda: <b>confirmado</b> o <b>cancelado</b>.</li>
+    <li>Si cancela, el horario se libera y otra clienta lo puede reservar.</li>
+    <li>Tiene costo porque WhatsApp cobra cada mensaje automático que se envía.</li></ul></div>
+
+  <h2>Así le llega a tu clienta</h2>
+  <div class="wa">
+    <div class="burbuja">¡Hola <b>Sofía</b>! 😊 Te recordamos tu turno en <b>tu centro</b> mañana <b>miércoles 18/11 a las 16:00 h</b> para <b>Limpieza facial</b>.<br>¿Confirmás tu asistencia?<br><span class="nota">Recordá que las cancelaciones son con 24 h de anticipación.</span></div>
+    <div class="botones"><span>✅ Confirmo</span><span>❌ Cancelo</span></div>
+  </div>
+  <div class="pie"><span>Turnia</span><span>1 / 2</span></div>
+</section>
+
+<section class="pag">
+  <div class="marca">Turnia · Recordatorios de turnos</div>
+  <h2 style="margin-top:14px">Precios del WhatsApp automático</h2>
+  <div class="planes">
+    <div class="plan"><h3>Hasta 200 mensajes</h3><p class="nota" style="margin:2px 0 0">Ideal para centros con hasta 200 turnos por mes.</p>
+      <p class="precio">$10.000 <small>/ mes</small></p>
+      <p class="setup">+ <b>$100.000</b> de configuración, por única vez.</p></div>
+    <div class="plan dest"><span class="etq">Conviene</span><h3>Hasta 400 mensajes</h3><p class="nota" style="margin:2px 0 0">Para centros con más movimiento.</p>
+      <p class="precio">$20.000 <small>/ mes</small></p>
+      <p class="setup"><b>Sin costo de configuración</b> 🎉</p></div>
+  </div>
+  <p class="nota">Se envía un recordatorio por turno. Los precios son en pesos argentinos y se suman al abono de Turnia. El recordatorio por mail y el botón de WhatsApp siguen incluidos en todos los casos.</p>
+
+  <h2>¿Cómo lo activamos?</h2>
+  <ol class="pasos">
+    <li><b>Elegís el plan</b> de 200 o 400 mensajes.</li>
+    <li><b>Nos pasás tu política de cancelación</b> (por ejemplo, “con 24 h de anticipación”) para incluirla en el mensaje.</li>
+    <li><b>Nosotras configuramos todo</b>: el mensaje, los botones y el envío automático. Vos no tenés que tramitar nada con WhatsApp.</li>
+    <li><b>WhatsApp aprueba el mensaje</b> (suele tardar pocos días) y queda funcionando.</li>
+    <li><b>Desde ese día</b>, cada clienta con turno recibe su recordatorio un día antes, y vos ves en la agenda quién confirmó y quién canceló.</li>
+  </ol>
+
+  <h2>Preguntas frecuentes</h2>
+  <p><b>¿Desde qué número les llega?</b><br>Desde el número de WhatsApp de Turnia, con el nombre de tu centro en el mensaje.</p>
+  <p><b>¿Y si la clienta no responde?</b><br>En la agenda lo ves como “sin confirmar”, y si querés le escribís vos con el botón de WhatsApp.</p>
+  <p><b>¿Puedo cambiar de plan?</b><br>Sí, cuando quieras.</p>
+
+  <div class="contacto"><b>¿Lo querés activar?</b> Escribinos 💗<br>WhatsApp <b>11 5422-9687</b> · belennsultaiz@gmail.com</div>
+  <div class="pie"><span>Turnia</span><span>2 / 2</span></div>
+</section>
+</body></html>

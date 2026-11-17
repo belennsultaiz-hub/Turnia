@@ -87,9 +87,14 @@
 - Para WhatsApp automático hace falta: cuenta Meta Business verificada (CUIT/constancia ARCA), un número nuevo dedicado, app en
   developers.facebook.com, tarjeta para pagar a Meta, plantilla "recordatorio de turno" aprobada. Propuesta: un número de Turnia para todos los centros.
 
+- PDF para los centros: `marketing/Turnia_recordatorios_de_turnos.pdf` (fuente `recordatorios.html`). Precios que definió Belén para el WhatsApp automático:
+  hasta 200 mensajes $10.000/mes + $100.000 de configuración (única vez); hasta 400 mensajes $20.000/mes sin costo de configuración.
+  Incluido sin costo: recordatorio por mail + botón WhatsApp del panel.
+
 ## Pendiente
 - Cobro de seña con Mercado Pago (cada centro conecta su cuenta).
 - Recordatorios automáticos por mail (y más adelante WhatsApp automático).
+- Armar el recordatorio automático por mail y la lista "Recordatorios de mañana" (el PDF ya lo ofrece como incluido).
 - Seguimiento de los 13 mails a los 3-4 días (mencionar el cotizador). Si piden cotizador: armarlo dentro de Turnia.
 - Oasis: cargar sus precios cuando los manden.
 - Pedirle a Belén que renueve el token de Supabase en el entorno (la Management API da "Invalid access token").
