@@ -89,6 +89,9 @@
 
 - PDF para los centros: `marketing/Turnia_recordatorios_de_turnos.pdf` (fuente `recordatorios.html`). Precios que definió Belén para el WhatsApp automático:
   hasta 200 mensajes $10.000/mes + $100.000 de configuración (única vez); hasta 400 mensajes $20.000/mes + $100.000 de configuración (corregido 17/11: los dos planes pagan configuración una sola vez; si pasan de 200 a 400 no se vuelve a pagar).
+  El PDF (3 págs.) pide al centro: línea nueva exclusiva, ser monotributista/RI con CUIT y constancia ARCA, Facebook de la dueña para Meta Business,
+  datos del negocio iguales a la constancia y una web (su página de Turnia). Los mensajes salen desde la línea del centro.
+  A definir: quién paga a Meta (si la cuenta es del centro, Meta cobra a la tarjeta de esa cuenta).
   Incluido sin costo: recordatorio por mail + botón WhatsApp del panel.
 
 ## Pendiente
